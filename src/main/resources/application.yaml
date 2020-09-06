@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: test
+
+---
+server:
+  port: 80
+  servlet:
+    context-path: /
+
+spring:
+  mvc:
+    format:
+      date: yyyy-MM-dd
+  profiles: test
+
+  thymeleaf:
+    cache: false
+  messages:
+    basename: i18n.login
+
