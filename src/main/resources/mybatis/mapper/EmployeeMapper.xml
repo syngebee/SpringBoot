@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.springboot.dao.EmployeeDao">
+
+    <select id="getAll" resultType="com.itheima.springboot.pojo.Employee">
+        SELECT * FROM employee
+    </select>
+
+    <select id="getEmployeeById" resultType="com.itheima.springboot.pojo.Employee">
+        SELECT * FROM employee WHERE id=#{id}
+    </select>
+
+    <insert id="save">
+        INSERT INTO employee values(null,#{lastName},#{email},#{gender},#{birth},#{departmentId})
+    </insert>
+
+    <delete id="remove">
+        DELETE FROM employee WHERE id=#{id}
+    </delete>
+
+    <update id="update">
+        UPDATE employee SET lastName=#{lastName},email=#{email},gender=#{gender},birth=#{birth},departmentId=#{departmentId} WHERE id=#{id}
+    </update>
+</mapper>

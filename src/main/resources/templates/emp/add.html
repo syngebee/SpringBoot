@@ -72,7 +72,7 @@
 						</div>
 						<div class="form-group">
 							<label>department</label>
-							<select class="form-control" name="department.id">
+							<select class="form-control" name="departmentId">
 								<option th:each="item:${departments}" th:text="${item.getDepartmentName()}" th:value="${item.getId()}"></option>
 							</select>
 						</div>

@@ -1,18 +1,20 @@
 package com.itheima.springboot.dao;
 
 import com.itheima.springboot.pojo.Employee;
+import org.springframework.stereotype.Repository;
 
-import java.util.Collection;
+import java.util.List;
 
+@Repository
 public interface EmployeeDao {
 
-    Collection<Employee> getAll();
+    List<Employee> getAll();
 
     void save(Employee employee);
-
-    void delete(Integer id);
 
     Employee getEmployeeById(Integer id);
 
     void remove(Integer id);
+
+    void update(Employee employee);
 }

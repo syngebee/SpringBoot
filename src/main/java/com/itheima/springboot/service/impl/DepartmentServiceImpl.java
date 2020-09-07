@@ -18,7 +18,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public List<Department> getDepartments() {
-        Collection<Department> depratments = departmentDao.getDepratments();
+        List<Department> depratments = departmentDao.getDepratments();
         return new ArrayList<>(depratments);
     }
 }

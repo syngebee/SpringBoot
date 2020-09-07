@@ -70,8 +70,8 @@
 									<td th:text="${emp.getId()}"></td>
 									<td th:text="${emp.getLastName()}"></td>
 									<td th:text="${emp.getEmail()}"></td>
-									<td th:text="${emp.getGender()==1?'male':'female'}"></td>
-									<td th:text="${emp.getDepartment().getDepartmentName()}"></td>
+									<td th:text="${emp.getGender()=='1'?'male':'female'}"></td>
+									<td th:text="${emp.getDepartmentId()}"></td>
 									<td th:text="${#dates.format(emp.getBirth(),'yyyy-MM-dd')}"></td>
 									<td>
 										<a class="btn btn-sm btn-primary" th:href="@{/emp/}+${emp.getId()}" >edit</a>

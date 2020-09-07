@@ -28,21 +28,27 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public List<Employee> getAll() {
-        Collection<Employee> all = employeeDao.getAll();
-        return new ArrayList<>(all);
+        List<Employee> all = employeeDao.getAll();
+        for (Employee employee : all) {
+            Department dep = departmentDao.getDepartmentById(Integer.parseInt(employee.getDepartmentId()));
+            employee.setDepartmentId(dep.getDepartmentName());
+        }
+        return all;
     }
 
     @Override
     public void add(Employee employee) {
-        Integer id = employee.getDepartment().getId();
-        Department departmentById = departmentDao.getDepartmentById(id);
-        employee.setDepartment(departmentById);
         employeeDao.save(employee);
     }
 
     @Override
     public void remove(Integer id) {
         employeeDao.remove(id);
+    }
+
+    @Override
+    public void update(Employee employee) {
+        employeeDao.update(employee);
     }
 
 }
